@@ -17,21 +17,40 @@ Replace `vX.Y.Z` with the release version you want.
 ### Linux
 
 - x86_64:
-
+##### Remember to replace vX.Y.Z to your desired version. 
+ - Using `curl`
   ```bash
   curl -L \
-    https://github.com/bundlecore/bcore-release/releases/download/vX.Y.Z/bcore-linux-amd64.tar.gz \
-    -o bcore-linux-amd64.tar.gz
+    https://github.com/bundlecore/bcore-release/releases/download/vX.Y.Z/bcore-linux-amd64 \
+    -o bcore-linux-amd64
+```
 
-  tar -xzf bcore-linux-amd64.tar.gz
-  sudo mv bcore /usr/local/bin/
+  - Using `wget`
+  ```bash
+  wget https://github.com/bundlecore/bcore-release/releases/download/vX.Y.Z/bcore-linux-x64
+  ```
+  - Install to your local bin or path
+  ```bash 
+  sudo mv bcore-linux-amd64 /usr/local/bin/bcore
+  ```
 
 #### Verifying checksums
 ```bash
-curl -L \
-  https://github.com/bundlecore/bcore-release/releases/download/vX.Y.Z/sha256sum.txt \
-  -o sha256sum.txt
+# Download checksums
+curl -LO https://github.com/bundlecore/bcore-release/releases/download/v1.0.11-qa/checksums.txt
 
-sha256sum --check sha256sum.txt
+# Verify checksums (Linux)
+sha256sum -c checksums.txt
+
+# Verify specific file
+sha256sum -c checksums.txt | grep bcore-linux-x64
 ```
 The output should report `OK` for the binary you downloaded.
+
+## Features
+- List installed tools and manage versions
+- Install, upgrade, and uninstall containerized tools
+- Apptainer/Singularity container support
+- Interactive and non-interactive CLI modes
+- Global options: --version, --help
+- Configuration management
