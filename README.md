@@ -1,4 +1,6 @@
 # Downloading bcore CLI
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/bundlecore/bcore-release?label=release)](RELEASE)
 
 This page explains how to download the **bcore** CLI binaries from the public `bcore-release` repository.
 
