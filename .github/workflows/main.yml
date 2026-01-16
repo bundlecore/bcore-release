@@ -1,18 +1,19 @@
-name: Discord Notification on Release
+name: Notify Discord
 
 on:
+  push:
+  pull_request:
+  issues:
   release:
-    types: [published]
+    types: [published, created]
 
 jobs:
-  notify:
+  discord-bridge:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Send Discord Notification
-        uses: gkr0110/github-discord-bridge@v0.0.1
+      - name: GitHub-Discord Bridge
+        uses: gkr0110/github-discord-bridge@main
         with:
+          webhook_dev: ${{ secrets.DISCORD_WEBHOOK_DEV }}
+          webhook_alerts: ${{ secrets.DISCORD_WEBHOOK_ALERTS }}
           webhook_announcements: ${{ secrets.DISCORD_WEBHOOK_ANNOUNCEMENTS }}
-    
