@@ -15,4 +15,4 @@ jobs:
         uses: gkr0110/github-discord-bridge@v0.0.1
         with:
           webhook_announcements: ${{ secrets.DISCORD_WEBHOOK_ANNOUNCEMENTS }}
-          config_file: '.github/discord-bridge-config.json'
+    
