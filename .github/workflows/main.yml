@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: GitHub-Discord Bridge
-        uses: gkr0110/github-discord-bridge@main
+        uses: gkr0110/github-discord-bridge@v1.0.2
         with:
           webhook_dev: ${{ secrets.DISCORD_WEBHOOK_DEV }}
           webhook_alerts: ${{ secrets.DISCORD_WEBHOOK_ALERTS }}
